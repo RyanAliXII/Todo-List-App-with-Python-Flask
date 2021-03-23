@@ -1,0 +1,30 @@
+{%extends  'base.html' %}
+
+
+{%block head%}
+
+
+{%endblock%}
+
+{%block body%}
+<header></header>
+<div class="form-wrapper">
+    <div class="form-area">
+        <form >
+            <div class="input-wrapper">
+                <label>Title</label>
+                <input type="text" name="title" oninput="handleInputs(this)" required>
+            </div>
+            <div class="input-wrapper">
+                <label>Description</label>
+                <textarea name = "body" oninput="handleInputs(this)" required></textarea>
+            </div>
+            <div class="btn-wrapper">
+                <button type="button" onclick="handleSubmit()">Submit todo</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" ></script>
+<script src={{url_for('static', filename='js/todos.js')}}></script>
+{%endblock%}
