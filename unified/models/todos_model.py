@@ -23,13 +23,14 @@ class Todo:
          todo = {"title":self.title, "body": self.body, "isDone": False}
          database = Database()
          collection = database.get_db().get_collection('todos')
-         collection.insert_one(todo)
-        
-         return dict(message="OK")
+         insert = collection.insert_one(todo)
+         return str(insert.inserted_id)
+
     def delete(self,id):
         database = Database()
         collection = database.get_db().get_collection('todos')
         collection.delete_one({"_id":ObjectId(id)})
+
     def update(self,id):
         database = Database()
         collection = database.get_db().get_collection('todos')

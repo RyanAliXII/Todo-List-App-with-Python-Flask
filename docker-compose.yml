@@ -1,0 +1,18 @@
+version: "3.5"
+
+services:
+
+  webapp:
+    container_name: todo_app
+    image: ryanali12/dockerized-flask-app
+    ports: 
+      - '5000:5000'
+  mongodb:
+    container_name: todo_mongo
+    image: mongo
+    ports: 
+      - '27090:27017'
+    environment: 
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
